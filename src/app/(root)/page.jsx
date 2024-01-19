@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <main className="commonContainer ">
       <HomePage />
+
     </main>
   );
 };
