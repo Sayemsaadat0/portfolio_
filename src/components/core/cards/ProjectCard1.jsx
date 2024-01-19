@@ -33,3 +33,9 @@ const ProjectCard1 = ({ title , isRight , thumbnail, bp1, bp2, bp3}) => {
 }
 
 export default ProjectCard1
+
+
+
+/* 
+         <div className='absolute left-[500px]  justify-center bg-slate-500/10 transition-all duration-700 group-hover:left-0 w-full h-full rounded-[20px]  py-4'>
+*/

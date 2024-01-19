@@ -7,17 +7,17 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { MdOutlineMenu } from "react-icons/md";
+import { usePathname } from 'next/navigation';
 
 
 const Navbar = () => {
-    const navLinks = <div className='flex flex-col lg:flex-row gap-6 text-xl'>
-        <Link className='max-w-36' href={'/#about'}>About</Link>
-        <Link className='max-w-36' href={'/projects'}>Projects</Link>
-        <Link className='max-w-36' href={'/'}>Experienct</Link>
-        <Link className='max-w-36' href={'/'}>Contact</Link>
+    const pathname = usePathname()
+    const navLinks = <div className='flex  flex-col lg:flex-row gap-6 text-xl'>
+        {/* <Link className='max-w-36' href={'/#about'}>About</Link> */}
+        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '/projects' && 'underline opacity-40  '}`} href={'/projects'}>Projects</Link>
+        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#experience' && 'underline opacity-40 underline-offset-4 font-bold'}`} href={'/#experience'}>Experienct</Link>
+        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#contact' && 'underline opacity-40 underline-offset-4 font-bold'}`}  href={'/#contact'}>Contact</Link>
     </div>
-
-
     const [open, setOpen] = useState(false)
     return (
         <div className='fixed top-0 left-0 w-full  z-20 bg-white'>

@@ -2,12 +2,12 @@ import React from 'react'
 
 const AboutSection = () => {
     return (
-        <section id='about'>
+        <section >
             <div className="mx-auto flex flex-col items-center justify-center gap-10  w-full  relative ">
-                <div className='relative'>
+                {/* <div className='relative'>
                     <span className='h-12 w-12  md:h-16 md:w-16 rounded-full bg-primary opacity-70 absolute -top-3 -left-2 -z-10'></span>
                     <h3 className='text-2xl md:text-4xl '>{"About Sayem"}</h3>
-                </div>
+                </div> */}
                 {/* <div className='h-60 w-60 bg-primary rounded-full blur-[80px] opacity-80 absolute left-0 bottom-0 -z-10 hidden md:block' /> */}
 
                 <div className='md:w-2/3 text-center leading-[200%]'>

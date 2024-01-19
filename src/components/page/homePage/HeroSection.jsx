@@ -7,8 +7,8 @@ import { FaSquareGithub } from "react-icons/fa6";
 
 const HeroSection = () => {
     return (
-        <section>
-            <div className="mx-auto flex flex-col items-center justify-center  py-20 md:py-32 md:flex-row relative">
+        <section >
+            <div className="mx-auto flex flex-col items-center justify-center  pt-20 md:pt-32 md:flex-row relative">
                 <div className="mb-10 md:mb-0 w-full flex justify-center items-center md:justify-between   md:w-1/2 ">
                     <div className='-rotate-90 hidden md:block'>
                         <div className="flex gap-x-4 ">
