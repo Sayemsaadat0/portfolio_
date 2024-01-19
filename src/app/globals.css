@@ -6,6 +6,24 @@
   font-family: "Abril Fatface", serif;
 }
 
+.cardScroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+.cardScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.cardScroll::-webkit-scrollbar-thumb {
+  background: azure; 
+  border-radius: 10px;
+}
+
+
+
 
 
 
