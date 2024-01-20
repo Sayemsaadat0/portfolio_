@@ -3,7 +3,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <main className="commonContainer ">
+    <main className="">
       <HomePage />
     </main>
   );

@@ -35,7 +35,7 @@ const EduAndExpTab = ({ active, setActive }) => {
 const EduAndExpSection = () => {
     const [active, setActive] = useState('experience')
     return (
-        <section className="text-gray-600 body-font flex flex-col items-center ">
+        <section className="text-gray-600 body-font flex flex-col items-center commonContainer">
             <div className='relative pb-6 md:pb-8 xl:pb-10'>
                 <span className='h-12 w-12  md:h-16 md:w-16 rounded-full bg-primary opacity-70 absolute -top-3 -left-2 -z-10'></span>
                 <h3 className='text-2xl md:text-4xl text-center'>Education and Professional <br /> Experience</h3>

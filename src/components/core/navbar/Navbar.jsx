@@ -15,12 +15,13 @@ const Navbar = () => {
     const navLinks = <div className='flex  flex-col lg:flex-row gap-6 text-xl'>
         {/* <Link className='max-w-36' href={'/#about'}>About</Link> */}
         <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '/projects' && 'underline opacity-40  '}`} href={'/projects'}>Projects</Link>
+        <a className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4`} target="blank" href={'https://github.com/Sayemsaadat0'}>Github</a>
         <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#experience' && 'underline opacity-40 underline-offset-4 font-bold'}`} href={'/#experience'}>Experienct</Link>
         <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#contact' && 'underline opacity-40 underline-offset-4 font-bold'}`}  href={'/#contact'}>Contact</Link>
     </div>
     const [open, setOpen] = useState(false)
     return (
-        <div className='fixed top-0 left-0 w-full  z-20 bg-white'>
+        <div className='fixed top-0 left-0 w-full z-50 bg-[#f0ebe5] '>
             <div className='flex justify-between commonContainer py-3 lg:py-6'>
                 <div>
                     <Link href="/"><h2 className='text-xl lg:text-4xl'>Sayem</h2></Link>

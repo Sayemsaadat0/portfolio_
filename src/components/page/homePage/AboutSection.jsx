@@ -3,7 +3,7 @@ import React from 'react'
 const AboutSection = () => {
     return (
         <section >
-            <div className="mx-auto flex flex-col items-center justify-center gap-10  w-full  relative ">
+            <div className="mx-auto flex flex-col items-center justify-center gap-10  w-full  relative commonContainer">
                 {/* <div className='relative'>
                     <span className='h-12 w-12  md:h-16 md:w-16 rounded-full bg-primary opacity-70 absolute -top-3 -left-2 -z-10'></span>
                     <h3 className='text-2xl md:text-4xl '>{"About Sayem"}</h3>

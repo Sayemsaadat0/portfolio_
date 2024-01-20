@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .titleFont {
   font-family: "Abril Fatface", serif;
 }
 
+.titleFont1 {
+  font-family: "Merriweather", serif;
+  /* font-family: 'Montserrat Alternates', sans-serif; */
+}
 .cardScroll::-webkit-scrollbar {
   width: 2px;
 }
+.entry-content a:hover:before {  
+  height: 17px;   
+}
+
 
 ::-webkit-scrollbar {
   width: 0px;
@@ -33,6 +42,47 @@
   padding-left: 120px;
   padding-right: 120px;
 }
+
+/* text animation */
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.animate-Button {
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate{
+  from{ transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1280px) {
   .commonContainer {
