@@ -65,19 +65,21 @@ export const NavAsidebar = () => {
 
 const Navbar = () => {
     return (
-        <div className='commonContainer border py-1 md:py-3'>
-            <div className='flex justify-between items-center'>
-                <div className='hidden md:block'>
-                    <SocialLinks />
-                </div>
-                <Link href={'/'}>
-                    <h3 className='font-semibold text-[24px] md:text-[28px] xl:text-[32px] '>Sayem</h3>
-                </Link>
-                <div className='hidden md:block'>
-                    <NavMenuList />
-                </div>
-                <div className='block md:hidden'>
-                    <NavAsidebar />
+        <div className='w-full bg-white fixed top-0 left-0 z-20'>
+            <div className='commonContainer border py-1 md:py-3'>
+                <div className='flex justify-between items-center'>
+                    <div className='hidden md:block'>
+                        <SocialLinks />
+                    </div>
+                    <Link href={'/'}>
+                        <h3 className='font-semibold text-[24px] md:text-[28px] xl:text-[32px] '>Sayem</h3>
+                    </Link>
+                    <div className='hidden md:block'>
+                        <NavMenuList />
+                    </div>
+                    <div className='block md:hidden'>
+                        <NavAsidebar />
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,10 +10,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // bg-gradient-to-br from-secondary to-primary hover:bg-gradient-to-br hover:from-[#212529c8] hover:to-[#ebbf46] rounded-[20px]
-        default: "bg-primary rounded-[20px] font-bold ",
+        default: "rounded-[20px] font-semibold text-white bg-black",
         outline:
-          "border border-secondary font-bold ",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border rounded-[20px] border-slate-500 font-semibold ",
+        link: "underline-offset-4 hover:underline",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -17,11 +17,11 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        primary: "#f5cc5c",
-        secondary: "#21252972",
-        tertiary: "#f0ebe5",
-      },
+      // colors: {
+      //   primary: "#f5cc5c",
+      //   secondary: "#21252972",
+      //   tertiary: "#f0ebe5",
+      // },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
