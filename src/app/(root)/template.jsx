@@ -4,10 +4,9 @@ import React from 'react';
 
 const template = ({ children }) => {
     return (
-        <div>
+        <div >
             <Navbar />
             {children}
-            <Footer />
         </div>
     );
 };

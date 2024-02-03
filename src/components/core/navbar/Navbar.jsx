@@ -1,47 +1,83 @@
 "use client"
-import Link from 'next/link'
 import React, { useState } from 'react'
+import SocialLinks from '../SocialLinks'
+import { MdMenu } from "react-icons/md";
 import {
     Sheet,
     SheetContent,
-    SheetTrigger,
+    SheetHeader,
+    SheetTitle,
 } from "@/components/ui/sheet"
-import { MdOutlineMenu } from "react-icons/md";
-import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+
+
+
+
+
+
+
+
+const NavMenuList = () => {
+    const navMenu = [
+        {
+            name: 'Portfolio',
+            url: '/projects'
+        },
+        {
+            name: 'Contact',
+            url: '/'
+        }
+    ]
+    return <div className="flex flex-col md:flex-row gap-4">
+        {navMenu.map((menuItem, index) => (
+            <span className="text-[14px] md:text-[16px] md:font-medium hover:underline underline-offset-4 transition-all" key={index}>
+                <Link href={menuItem.url}>{menuItem.name}</Link>
+            </span>
+        ))}
+    </div>
+}
+
+
+export const NavAsidebar = () => {
+    const [open, setOpen] = useState(false)
+    return <div>
+        <Sheet open={open} onOpenChange={() => setOpen(!open)}>
+            <div className="cursor-pointer" onClick={() => setOpen(!open)}>
+                <MdMenu />
+            </div>
+            <SheetContent>
+                <SheetHeader>
+                    <SheetTitle className="text-left">Sayem</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col justify-between  h-full pt-10">
+                    <NavMenuList />
+                    <div className="mb-6">
+                        <SocialLinks />
+                    </div>
+                </div>
+            </SheetContent>
+        </Sheet>
+    </div>
+}
+
 
 
 const Navbar = () => {
-    const pathname = usePathname()
-    const navLinks = <div className='flex  flex-col lg:flex-row gap-6 text-xl'>
-        {/* <Link className='max-w-36' href={'/#about'}>About</Link> */}
-        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '/projects' && 'underline opacity-40  '}`} href={'/projects'}>Projects</Link>
-        <a className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4`} target="blank" href={'https://github.com/Sayemsaadat0'}>Github</a>
-        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#experience' && 'underline opacity-40 underline-offset-4 font-bold'}`} href={'/#experience'}>Experienct</Link>
-        <Link className={`max-w-36 transition-all duration-500 hover:opacity-80 hover:underline underline-offset-4 ${pathname === '#contact' && 'underline opacity-40 underline-offset-4 font-bold'}`}  href={'/#contact'}>Contact</Link>
-    </div>
-    const [open, setOpen] = useState(false)
     return (
-        <div className='fixed top-0 left-0 w-full z-50 bg-[#f0ebe5] '>
-            <div className='flex justify-between commonContainer py-3 lg:py-6'>
-                <div>
-                    <Link href="/"><h2 className='text-xl lg:text-4xl'>Sayem</h2></Link>
+        <div className='commonContainer border py-1 md:py-3'>
+            <div className='flex justify-between items-center'>
+                <div className='hidden md:block'>
+                    <SocialLinks />
                 </div>
-                <div className='hidden lg:block'>
-                    {navLinks}
+                <Link href={'/'}>
+                    <h3 className='font-semibold text-[24px] md:text-[28px] xl:text-[32px] '>Sayem</h3>
+                </Link>
+                <div className='hidden md:block'>
+                    <NavMenuList />
                 </div>
-                <div className='block lg:hidden'>
-                    <Sheet open={open} onOpenChange={() => setOpen(!open)}>
-                        <SheetTrigger><MdOutlineMenu className='text-2xl' /></SheetTrigger>
-                        <SheetContent side='left'>
-                            <div className='pb-20'>
-                                <h2 className='text-2xl lg:text-4xl'>Sayem Saadat</h2>
-                            </div>
-                            <div onClick={() => setOpen(!open)}>
-                                {navLinks}
-                            </div>
-                        </SheetContent>
-                    </Sheet>
-
+                <div className='block md:hidden'>
+                    <NavAsidebar />
                 </div>
             </div>
         </div>
@@ -49,48 +85,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-
-
-
-
-/* 
-const Navbar = () => {
-    const navLinks = <div className='flex flex-col lg:flex-row gap-6 text-xl'>
-        <Link className='max-w-36' href={'/#about'}>About</Link>
-        <Link className='max-w-36' href={'/projects'}>Projects</Link>
-        <Link className='max-w-36' href={'/'}>Experienct</Link>
-        <Link className='max-w-36' href={'/'}>Contact</Link>
-    </div>
-
-
-    const [open, setOpen] = useState(false)
-    return (
-        <div className=' backdrop-blur-md z-10 fixed w-full  top-0 -translate-x-1/2 commonContainer mx-auto '>
-            <div className='flex justify-between  lg:px-24 w-full   py-3 lg:py-6'>
-                <div>
-                    <Link href="/"><h2 className='text-xl lg:text-4xl'>Sayem</h2></Link>
-                </div>
-                <div className='hidden lg:block'>
-                    {navLinks}
-                </div>
-                <div className='block lg:hidden'>
-                    <Sheet open={open} onOpenChange={() => setOpen(!open)}>
-                        <SheetTrigger><MdOutlineMenu className='text-2xl' /></SheetTrigger>
-                        <SheetContent side='left'>
-                            <div className='pb-20'>
-                                <h2 className='text-2xl lg:text-4xl'>Sayem Saadat</h2>
-                            </div>
-                            <div onClick={() => setOpen(!open)}>
-                                {navLinks}
-                            </div>
-                        </SheetContent>
-                    </Sheet>
-
-                </div>
-            </div>
-        </div>
-    )
-}
-
-*/
